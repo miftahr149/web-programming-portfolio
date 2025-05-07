@@ -15,7 +15,7 @@
   --text-size-5: calc(var(--text-size-base) * 2);
 
   /* Padding Size */
-  --padding-base: 3rem;
+  --padding-base: 5vw;
   --padding-1: calc(var(--padding-base) * 0.25);
   --padding-2: calc(var(--padding-base) * 0.5);
   --padding-3: var(--padding-base);
@@ -29,6 +29,8 @@
   --img-size-3: var(--img-size-base);
   --img-size-4: calc(var(--img-size-base) * 1.25);
   --img-size-5: calc(var(--img-size-base) * 1.5);
+
+  
 }
 
 * {
@@ -44,9 +46,13 @@ img {
   height: auto;
 }
 
+body {
+  min-height: 150vh;
+}
+
 /* # Utility Class */
 
-/* # image */
+/* ## image */
 .img {
   --img-size: var(--img-size-3);
 
@@ -62,13 +68,20 @@ img {
   filter: invert(100%);
 }
 
-/* # button */
+/* ## button */
 .button {
   border-radius: 10px;
+  border: 0;
+  padding: 8px;
 }
 
 .button:hover {
   cursor: pointer;
+}
+
+/* # misc */
+.none {
+  display: none;
 }
 
 /* # Header */
@@ -76,9 +89,14 @@ img {
   background-color: var(--primary-color);
   color: var(--secondary-text-color);
   padding: var(--padding-1) var(--padding-2);
-
+  flex-direction: column;
   display: flex;
-  align-items: center;
+  gap: 1rem;
+  align-items: stretch;
+
+  position: sticky;
+  top: 0;
+  left: 0;
 }
 
 .header__name {
@@ -87,57 +105,142 @@ img {
   font-weight: bold;
 }
 
-.page-link {
-  display: flex;
-  align-items: center;
+.header__nav-pages-button {
+  --button-img-size: var(--img-size-3);
+  
+  padding: 0;
+  background-color: transparent;
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.nav-pages-button__bg, .nav-pages-button__img {
+  grid-row: 1 / 2;
+}
+
+.nav-pages-button__img {
+  --img-size: var(--button-img-size);
+  
+  filter: invert(100%);
+  z-index: 1;
+  grid-column: 1 / 2;
+  transition: all 300ms ease-in;
+  justify-self: center;
+  align-self: center;
+
+}
+
+.nav-pages-button__bg {
+  --size: 0;
+  
+  grid-column: 1 / 2;
+  z-index: 0;
+  border-radius: 50%;
+  width: var(--size);
+  height: var(--size);
+  background-color: var(--primary-hover-color);
+  transition: all 200ms ease-in;
+
+  justify-self: center;
+  align-self: center;
+}
+
+.header__nav-pages-button--active .nav-pages-button__img {
+  filter: invert(0%);
+}
+
+.header__nav-pages-button--active .nav-pages-button__bg {
+  --size: calc(var(--button-img-size) + 12px);
 }
 
 .header__nav-pages {
-  flex-grow: 1;
-  padding: 0 var(--padding-1);
-  display: flex;
-  gap: 1rem;
-  justify-content: end;
+  border-top: 1px solid var(--secondary-text-color);
+  display: none;
+  width: auto;
 }
 
 .page-link {
   display: flex;
   gap: 0.5rem;
-  transition: all 300ms ease-in;
-  padding: var(--padding-1);
+  align-items: center;
+  gap: 2rem;
+  flex-grow: 0;
+}
+
+.page-link__img {
+  filter: invert(100%);
 }
 
 .page-link__text {
   font-weight: bold;
   font-size: var(--text-size-4);
-  flex-grow: 1;
 }
 
-@keyframes page-link-img {
-  from {
-    translate: 0 50px;
+@media screen and (min-width: 769px) {
+  @keyframes page-link-img {
+    from {
+      translate: 0 10px;
+    }
+    75% {
+      width: var(--img-size);
+    }
+    to {
+      translate: 0;
+      width: var(--img-size);
+    }
   }
-  75% {
-    width: var(--img-size);
-  }
-  to {
-    translate: 0;
-    width: var(--img-size);
-  }
-}
 
-.page-link__img {
-  --img-size: var(--img-size-2);
+  .header {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .header__nav-pages-button {
+    display: none;
+  }
   
-  width: 0;
-  filter: invert(100%);
-}
+  .header__nav-pages {
+    border: 0;
+    flex-grow: 1;
+    padding: 0 var(--padding-1);
+    display: flex !important;
+    gap: 1rem;
+    justify-content: end;
+    flex-direction: row;
+  }
+  
+  .page-link {
+    display: flex;
+    gap: 0;
+    transition: all 300ms ease-in;
+    align-items: center;
+    padding: var(--padding-1);
+  }
+  
+  .page-link__text {
+    text-align: center;
+    font-size: var(--text-size-4);
+    flex-grow: 1;
+  }
 
-.page-link:hover {
-  background-color: var(--primary-hover-color);
-}
+  .page-link__img {
+    --img-size: var(--img-size-2);
+    
+    width: 0;
+  }
 
-.page-link:hover .page-link__img {
-  width: var(--img-size);
-  animation: page-link-img 200ms ease-in;
+  .page-link:hover {
+    background-color: var(--primary-hover-color);
+    gap: 0.5rem;
+  }
+  
+  .page-link:hover .page-link__img {
+    width: var(--img-size);
+    filter: invert(0%);
+    animation: page-link-img 200ms ease-in;
+  }
+  
+  .page-link:hover .page-link__text {
+    color: var(--primary-text-color);
+  }
 }

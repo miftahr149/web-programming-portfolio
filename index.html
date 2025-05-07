@@ -9,8 +9,14 @@
 <body>
   <!-- Header Start -->
    <header class="header">
-      <p class="header__name">miftah</p>
-      <nav class="header__nav-pages">
+      <div style="display: flex; align-items: center; gap: 1rem">
+        <button class="button header__nav-pages-button">
+          <img src="public/img/Menu.png" alt="" class="img nav-pages-button__img">
+          <div class="nav-pages-button__bg"></div>
+        </button>
+        <p class="header__name">miftah</p>
+      </div>
+      <nav id="nav-pages" class="header__nav-pages">
         <a class="button page-link">
           <img class="img page-link__img" src="public/img/home_2.png" width="30" height="30">
           <p class="page-link__text">Home</p>
@@ -26,5 +32,6 @@
       </nav>
    </header>
    <!-- Header End -->
+    <script src="public/js/index.js"></script>
 </body>
 </html>
