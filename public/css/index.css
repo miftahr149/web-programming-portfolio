@@ -5,30 +5,37 @@
   --primary-hover-color: #3DC2EC;
   --primary-text-color: #2D2525;
   --secondary-text-color: #FFFFFF;
+
+  /* Scaler */
+  --scaler-1: 0.25;
+  --scaler-2: 0.5;
+  --scaler-3: 1;
+  --scaler-4: 1.5;
+  --scaler-5: 2;
   
   /* Text Size */
   --text-size-base: 1rem;
-  --text-size-1: calc(var(--text-size-base) * 0.25);
-  --text-size-2: calc(var(--text-size-base) * 0.5);
+  --text-size-1: calc(var(--text-size-base) * var(--scaler-1));
+  --text-size-2: calc(var(--text-size-base) * var(--scaler-2));
   --text-size-3: var(--text-size-base);
-  --text-size-4: calc(var(--text-size-base) * 1.5);
-  --text-size-5: calc(var(--text-size-base) * 2);
+  --text-size-4: calc(var(--text-size-base) * var(--scaler-3));
+  --text-size-5: calc(var(--text-size-base) * var(--scaler-4));
 
   /* Padding Size */
   --padding-base: 5vw;
-  --padding-1: calc(var(--padding-base) * 0.25);
-  --padding-2: calc(var(--padding-base) * 0.5);
+  --padding-1: calc(var(--padding-base) * var(--scaler-1));
+  --padding-2: calc(var(--padding-base) * var(--scaler-2));
   --padding-3: var(--padding-base);
-  --padding-4: calc(var(--padding-base) * 1.5);
-  --padding-5: calc(var(--padding-base) * 2);
+  --padding-4: calc(var(--padding-base) * var(--scaler-4));
+  --padding-5: calc(var(--padding-base) * var(--scaler-5));
 
   /* image size */
   --img-size-base: 3rem;
-  --img-size-1: calc(var(--img-size-base) * 0.25);
-  --img-size-2: calc(var(--img-size-base) * 0.5);
+  --img-size-1: calc(var(--img-size-base) * var(--scaler-1));
+  --img-size-2: calc(var(--img-size-base) * var(--scaler-2));
   --img-size-3: var(--img-size-base);
-  --img-size-4: calc(var(--img-size-base) * 1.25);
-  --img-size-5: calc(var(--img-size-base) * 1.5);
+  --img-size-4: calc(var(--img-size-base) * var(--scaler-4));
+  --img-size-5: calc(var(--img-size-base) * var(--scaler-5));
 
   
 }
@@ -47,7 +54,7 @@ img {
 }
 
 body {
-  min-height: 150vh;
+  min-height: 100vh;
 }
 
 /* # Utility Class */
@@ -174,9 +181,96 @@ body {
 .page-link__text {
   font-weight: bold;
   font-size: var(--text-size-4);
+  text-transform: capitalize;
+  text-align: center;
 }
 
+/* # Home Page */
+.home {
+  display: grid;
+  grid-template-rows:  repeat(4, .15fr) repeat(2, 0.1fr);
+
+  --grid-end-profile-picture: 4;
+  --grid-end-greetings: 6
+}
+
+.home__profile-photo, .home__greeting {
+  grid-column: 1 / 2;
+}
+
+.home__profile-photo {
+  grid-row: 1 / var(--grid-end-profile-picture);
+  height: 100%;
+  width: 100%;
+  
+  object-fit: cover;
+  object-position: 0 calc(-50px + 1vh);
+}
+
+.home__greeting {
+  /* Text Size */
+  --text-size-base: calc(10vw + 0.2rem);
+  --text-size-name: calc(var(--text-size-base) * var(--scaler-4)); 
+  --text-size-text: calc(var(--text-size-base) * var(--scaler-2)); 
+  
+  /* Grid */
+  --grid-start: calc(var(--grid-end-profile-picture) - 1);
+  grid-row: var(--grid-start) / var(--grid-end-greetings);
+
+  /* misc */
+  padding-left: 10px;
+}
+
+
+.greeting__text {
+  font-size: var(--text-size-text);
+  text-transform: capitalize;
+}
+
+.greeting__name {
+  font-size: var(--text-size-name);
+  text-transform: uppercase;
+  color: var(--primary-color);
+}
+
+.home__social-media {
+  /* img-size */
+  
+  /* Grid Configuration */
+  --grid-start: var(--grid-end-greetings);
+  grid-row: var(--grid-start) / -1;
+  
+  /* Flex Configuration */
+  display: flex;
+  gap: 1rem;
+}
+
+.social-media__account {
+  --img-size-base: calc(1rem + 6vw);
+  --img-size-social-media: calc(var(--img-size-base) * var(--scaler-4));
+
+  display: flex;
+  padding: 0.5rem;
+  gap: .7rem;
+  border-radius: 10px;
+  align-items: center;
+}
+
+.account__social-media-img {
+  --img-size: var(--img-size-social-media);
+  border-radius: 50%;
+  border: 1.5vw solid var(--primary-color);
+}
+
+.account__name {
+  display: none;
+}
+
+
+
 @media screen and (min-width: 769px) {
+  /* # Animation */
+  
   @keyframes page-link-img {
     from {
       translate: 0 10px;
@@ -190,6 +284,7 @@ body {
     }
   }
 
+  /* # Header */
   .header {
     flex-direction: row;
     align-items: center;
@@ -219,7 +314,6 @@ body {
   
   .page-link__text {
     text-align: center;
-    font-size: var(--text-size-4);
     flex-grow: 1;
   }
 
