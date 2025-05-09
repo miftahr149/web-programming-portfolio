@@ -1,0 +1,148 @@
+/* # Home Page */
+.home {
+  display: grid;
+  grid-template-rows:  repeat(4, 0.2fr) repeat(2, 0.1fr);
+
+  --grid-end-profile-picture: 4;
+  --grid-end-greetings: 6
+}
+
+.home__profile-photo, .home__greeting {
+  grid-column: 1 / 2;
+}
+
+.home__profile-photo {
+  --size: 100%;
+  
+  grid-row: 1 / var(--grid-end-profile-picture);
+  height: var(--size);
+  width: var(--size);
+  
+  object-fit: cover;
+  object-position: 0 calc(-50px + 1vh);
+}
+
+.home__greeting {
+  /* Text Size */
+  --text-size-base: calc(10vw + 0.2rem);
+  --text-size-name: calc(var(--text-size-base) * var(--scaler-4)); 
+  --text-size-text: calc(var(--text-size-base) * var(--scaler-2)); 
+  
+  /* Grid */
+  --grid-start: calc(var(--grid-end-profile-picture) - 1);
+  grid-row: var(--grid-start) / var(--grid-end-greetings);
+
+  /* misc */
+  padding-left: 10px;
+}
+
+
+.greeting__text {
+  font-size: var(--text-size-text);
+  text-transform: capitalize;
+}
+
+.greeting__name {
+  font-size: var(--text-size-name);
+  text-transform: uppercase;
+  color: var(--primary-color);
+}
+
+.home__social-media {
+  /* img-size */
+  
+  /* Grid Configuration */
+  --grid-start: var(--grid-end-greetings);
+  grid-row: var(--grid-start) / -1;
+  
+  /* Flex Configuration */
+  display: flex;
+  gap: 1rem;
+
+  align-self: start;
+}
+
+.social-media__account {
+  --img-size-base: calc(1rem + 6vw);
+  --img-size-social-media: calc(var(--img-size-base) * var(--scaler-4));
+
+  background-color: var(--primary-color);
+  display: flex;
+  padding: 0.5rem;
+  gap: .7rem;
+  border-radius: 50%;
+  align-items: center;
+}
+
+.account__social-media-img {
+  --img-size: var(--img-size-social-media);
+  border-radius: 50%;
+}
+
+.account__name {
+  display: none;
+  color: var(--secondary-text-color);
+  font-size: var(--text-size-4);
+  font-weight: bold;
+}
+
+@media screen and (min-width: 769px) {
+  /* # Home Page */
+  .home {
+    --grid-end-profile-picture: 3;
+    --grid-end-greetings: 2;
+    
+    padding: 6rem 0.5rem;
+    grid-template-columns: 1fr 2fr;
+    gap: 1rem;
+    grid-template-rows: repeat(2, 1fr);
+  }
+
+  .home__profile-photo {
+    --img-size-base: calc(20vw + 1rem);
+    --size: calc(var(--img-size-base) * var(--scaler-4));
+    
+    grid-column: 1 / 2;
+    border-radius: 50%;
+    align-self: center;
+    justify-self: center;
+  }
+
+  .home__greeting {
+    --text-size-base: 3rem;
+    --grid-start: 1;
+    
+    grid-column: 2 / 3;
+    padding: 10px;
+    align-self: self-end;
+  }
+
+  .home__social-media {
+    grid-column: 2 / 3;
+  }
+
+  .social-media__account {
+    --img-size-base: 2.2rem;
+    background-color: var(--primary-color);
+    text-decoration: none;
+    border-radius: 2rem;
+    padding: 5px;
+    transition: all 200ms ease-in-out
+  }
+
+  .account__social-media-img {
+    border: 0;
+  }
+
+  .account__name {
+    display: contents;
+  }
+
+  .social-media__account:hover {
+    background-color: var(--primary-hover-color);
+  }
+
+  .social-media__account:hover .account__name {
+    color: var(--primary-text-color);
+  }
+}
