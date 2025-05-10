@@ -1,11 +1,154 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/public/css/index.css" />
+    <link rel="stylesheet" href="/public/css/about_me.css" />
+    <title>Portfolio | Miftah -- About Me</title>
+  </head>
+  <body>
+    <!-- Header Start -->
+    <header class="header">
+      <div style="display: flex; align-items: center; gap: 1rem">
+        <button class="button header__nav-pages-button">
+          <img
+            src="/public/img/Menu.png"
+            alt=""
+            class="img nav-pages-button__img"
+          />
+          <div class="nav-pages-button__bg"></div>
+        </button>
+        <p class="header__name">miftah</p>
+      </div>
+      <nav id="nav-pages" class="header__nav-pages">
+        <a class="button page-link" href="/index.html">
+          <img
+            class="img page-link__img"
+            src="/public/img/home_2.png"
+            width="30"
+            height="30"
+          />
+          <p class="page-link__text">Home</p>
+        </a>
+        <a class="button page-link" href="/public/pages/about_me.html">
+          <img
+            class="img page-link__img"
+            src="/public/img/about-me.png"
+            width="30"
+            height="30"
+          />
+          <p class="page-link__text">About Me</p>
+        </a>
+        <a
+          class="button page-link"
+          href="/public/pages/professional_development.html"
+        >
+          <img
+            class="img page-link__img"
+            src="/public/img/professional-development.png"
+            width="30"
+            height="30"
+          />
+          <p class="page-link__text">Professional Development</p>
+        </a>
+      </nav>
+    </header>
+    <!-- Header End -->
+    <!-- About Me Start -->
+    <main class="about-me">
+      <h1 class="page-title h h--1">about me</h1>
+      <p class="description">
+        As mention in home page, I am an undergraduate student who currently
+        studying in computer science. Right now, I have interest in studying
+        about <b>how to develope a website</b>, from designing the user
+        interface, handling database of website, creating API, etc.
+      </p>
+      <section id="programming-language" class="box">
+        <h2 class="h h--2">programming language</h2>
+        <ul class="img-list">
+          <li class="img-list__element">
+            <img
+              src="/public/img/javascript.png"
+              alt=""
+              class="img"
+              width="30"
+              height="30"
+            />
+            <div class="background"></div>
+          </li>
+          <li class="img-list__element">
+            <img
+              src="/public/img/Typescript.png"
+              alt=""
+              class="img"
+              width="30"
+              height="30"
+            />
+            <div class="background"></div>
+          </li>
+          <li class="img-list__element">
+            <img
+              src="/public/img/python.png"
+              alt=""
+              class="img"
+              width="30"
+              height="30"
+            />
+            <div class="background"></div>
+          </li>
+          <li class="img-list__element">
+            <img
+              src="/public/img/php.png"
+              alt=""
+              class="img"
+              width="30"
+              height="30"
+              
+            />
+            <div class="background"></div>
+          </li>
+        </ul>
+      </section>
+
+      <section id="framework" class="box">
+        <h2 class="h h--2">framework</h2>
+        <ul class="img-list">
+          <li class="img-list__element">
+            <img
+              src="/public/img/Django.png"
+              alt=""
+              class="img"
+              width="30"
+              height="30"
+            />
+            <div class="background"></div>
+          </li>
+          <li class="img-list__element">
+            <img
+              src="/public/img/react.png"
+              alt=""
+              class="img"
+              width="30"
+              height="30"
+            />
+            <div class="background"></div>
+          </li>
+          <li class="img-list__element">
+            <img
+              src="/public/img/bootstrap.png"
+              alt=""
+              class="img"
+              width="30"
+              height="30"
+            />
+            <div class="background"></div>
+          </li>
+        </ul>
+      </section>
+    </main>
+    <!-- About Me End -->
+
+    <script src="/public/js/index.js"></script>
+  </body>
 </html>

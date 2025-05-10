@@ -92,9 +92,46 @@ main {
   cursor: pointer;
 }
 
-/* # misc */
+/* ## misc */
 .none {
   display: none;
+}
+
+/* ## h1, h2 */
+.h {
+  --font-size-base: 4rem;
+  --font-size-scaler: var(--scaler-4);
+  --font-color: var(--secondary-color);
+  
+  font-size: calc(var(--font-size-base) * var(--font-size-scaler));
+  color: var(--font-color);
+  text-transform: capitalize;
+}
+
+.h--1 {
+  --font-size-scaler: var(--scaler-3);
+}
+
+.h--2 {
+  --font-size-scaler: var(--scaler-2);
+}
+
+/* Box */
+.box {
+  --background-color: transparent;
+  --border-color: var(--primary-color);
+  --color: var(--primary-text-color);
+
+  padding: 10px;
+  background-color: var(--background-color);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  color: var(--color);
+}
+
+.box--fill {
+  --background-color: var(--primary-color);
+  --color: var(--secondary-color);
 }
 
 /* # Header */
@@ -209,6 +246,10 @@ main {
       translate: 0;
       width: var(--img-size);
     }
+  }
+
+  main {
+    padding: 5vh 2vw;
   }
 
   /* # Header */
