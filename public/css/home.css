@@ -1,38 +1,44 @@
 /* # Home Page */
 .home {
   display: grid;
-  grid-template-rows:  repeat(4, 0.2fr) repeat(2, 0.1fr);
-
-  --grid-end-profile-picture: 4;
-  --grid-end-greetings: 6;
+  grid-auto-rows: max-content;
+  grid-template-rows: repeat(10, 0.06fr);  
+  gap: 1rem;
 }
 
-.home__profile-photo, .home__greeting {
+.home__profile-photo, .home__content {
   grid-column: 1 / 2;
 }
 
 .home__profile-photo {
   --size: 100%;
+  --height: min(var(--size));
+  --width: var(--size);
   
-  grid-row: 1 / var(--grid-end-profile-picture);
-  height: var(--size);
-  width: var(--size);
+  grid-row: 1 / 8;
+  height: var(--height);
+  width: var(--width);
   
   object-fit: cover;
   object-position: 0 calc(-50px + 1vh);
 }
 
-.home__greeting {
+.home__content {
+  grid-row: 5 / 11;
+  display: grid;
+  grid-auto-rows: min-content;
+  gap: 1rem;
+}
+
+.content__greetings {
   /* Text Size */
   --text-size-base: calc(10vw + 0.2rem);
   --text-size-name: calc(var(--text-size-base) * var(--scaler-4)); 
   --text-size-text: calc(var(--text-size-base) * var(--scaler-2)); 
   
   /* Grid */
-  --grid-start: calc(var(--grid-end-profile-picture) - 1);
-  grid-row: var(--grid-start) / var(--grid-end-greetings);
-
-  /* misc */
+  grid-row: var(--grid-row-start-greetings) / var(--grid-row-end-greetings);
+  align-self: center;
 }
 
 
@@ -47,12 +53,13 @@
   color: var(--primary-color);
 }
 
-.home__social-media {
+.content__social-media {
   /* img-size */
   
   /* Grid Configuration */
-  --grid-start: var(--grid-end-greetings);
-  grid-row: var(--grid-start) / -1;
+  --grid-row-start: var(--grid-row-end-greetings);
+  grid-row: var(--grid-row-start) / calc(var(--grid-row-start) + var(--grid-row-num-social-media));
+  grid-column: 1 / 2;
   
   /* Flex Configuration */
   display: flex;
@@ -89,12 +96,11 @@
 @media screen and (min-width: 769px) {
   /* # Home Page */
   .home {
-    --grid-end-profile-picture: 3;
-    --grid-end-greetings: 2;
+    --grid-row-start-greetings: 1;
     
     grid-template-columns: 1fr 2fr;
     gap: 1rem;
-    grid-template-rows: repeat(2, 1fr);
+    grid-template-rows: 1fr;
   }
 
   .home__profile-photo {
@@ -107,16 +113,20 @@
     justify-self: center;
   }
 
-  .home__greeting {
-    --text-size-base: 3rem;
-    --grid-start: 1;
+  .home__content {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    align-self: center;
+  }
+
+  .content__greetings {
+    --text-size-base: 3rem; 
     
     grid-column: 2 / 3;
     padding: 10px;
-    align-self: self-end;
   }
 
-  .home__social-media {
+  .content__social-media {
     grid-column: 2 / 3;
   }
 
