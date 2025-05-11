@@ -11,10 +11,14 @@
     <!-- Header Start -->
     <header class="header">
       <div style="display: flex; align-items: center; gap: 1rem">
-        <button class="button header__nav-pages-button">
+        <button
+          id="menu"
+          aria-label="menu"
+          class="button header__nav-pages-button"
+        >
           <img
             src="/public/img/Menu.png"
-            alt=""
+            alt="menu"
             class="img nav-pages-button__img"
           />
           <div class="nav-pages-button__bg"></div>
@@ -26,6 +30,7 @@
           <img
             class="img page-link__img"
             src="/public/img/home_2.png"
+            alt="home"
             width="30"
             height="30"
           />
@@ -35,6 +40,7 @@
           <img
             class="img page-link__img"
             src="/public/img/about-me.png"
+            alt="about-me"
             width="30"
             height="30"
           />
@@ -47,6 +53,7 @@
           <img
             class="img page-link__img"
             src="/public/img/professional-development.png"
+            alt="professional development"
             width="30"
             height="30"
           />
@@ -63,8 +70,8 @@
       <article class="industry-exposure">
         <h2 class="h h--2">industry exposure</h2>
         <img
-          src="/public/img/UniConnect-poster.jpg"
-          alt=""
+          src="/public/img/UniConnect-Poster-mobile.webp"
+          alt="poster"
           class="poster"
           width="30"
           height="30"
@@ -93,8 +100,8 @@
           </ol>
         </section>
         <img
-          src="/public/img/UniConnectPhoto.jpeg"
-          alt=""
+          alt="UniConnect Photo"
+          src="/public/img/UniConnect-photo-mobile.webp"
           class="photo"
           width="30"
           height="30"
@@ -106,7 +113,7 @@
       <section class="personal-project">
         <h2 class="h h--2">personal project</h2>
 
-        <section class="project-card">
+        <section class="box box--fill project-card">
           <h3 class="h h--2">MealMaster</h3>
           <p class="project-description">
             MealMaster is a website that simply for sharing ingredients. you can
@@ -137,12 +144,12 @@
             class="button github-repo-button"
             target="_blank"
           >
-            <img src="/public/img/github.png" alt="" class="img" />
+            <img src="/public/img/github.png" alt="github img" class="img" />
             <p class="label">Project Repository</p>
           </a>
         </section>
 
-        <section class="project-card">
+        <section class="box box--fill project-card">
           <h3 class="h h--2">Bill Split Management System</h3>
           <p class="project-description">
             Bill Split Management System is a website that allow user to manage
@@ -156,13 +163,13 @@
               <li class="tag-element">
                 <img
                   src="/public/img/python.png"
-                  alt="javascript"
+                  alt="python"
                   class="img"
                 />
                 <p class="name">Python</p>
               </li>
               <li class="tag-element">
-                <img src="/public/img/Typescript.png" alt="php" class="img" />
+                <img src="/public/img/Typescript.png" alt="typescript" class="img" />
                 <p class="name">TypeScript</p>
               </li>
             </ul>
@@ -172,19 +179,15 @@
             <p class="label">framework</p>
             <ul class="list">
               <li class="tag-element">
-                <img
-                  src="/public/img/react.png"
-                  alt="javascript"
-                  class="img"
-                />
+                <img src="/public/img/react.png" alt="react" class="img" />
                 <p class="name">react</p>
               </li>
               <li class="tag-element">
-                <img src="/public/img/bootstrap.png" alt="php" class="img" />
+                <img src="/public/img/bootstrap.png" alt="react" class="img" />
                 <p class="name">bootstrap</p>
               </li>
               <li class="tag-element">
-                <img src="/public/img/Django.png" alt="php" class="img" />
+                <img src="/public/img/Django.png" alt="react" class="img" />
                 <p class="name">django</p>
               </li>
             </ul>
@@ -195,7 +198,7 @@
             class="button github-repo-button"
             target="_blank"
           >
-            <img src="/public/img/github.png" alt="" class="img" />
+            <img src="/public/img/github.png" alt="github" class="img" />
             <p class="label">Project Repository</p>
           </a>
         </section>

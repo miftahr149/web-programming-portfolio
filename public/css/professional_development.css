@@ -18,13 +18,14 @@
 }
 
 .industry-exposure .poster {
-  width: 40vw;
+  width: 50%;
   justify-self: center;
 }
 
 .industry-exposure .photo {
   width: auto;
   align-self: center;
+  justify-self: center;
 }
 
 .industry-exposure .summary {
@@ -58,9 +59,7 @@
 
 .project-card {
   border-radius: 10px;
-  background-color: var(--secondary-color);
   padding: 1.5rem;
-  color: var(--secondary-text-color);
   font-size: var(--text-size-3);
   
   display: grid;
@@ -173,7 +172,8 @@
   }
 
   .industry-exposure .poster {
-    grid-area: ps
+    grid-area: ps;
+    width: 20vw;
   }
 
   .industry-exposure .photo {
@@ -187,10 +187,6 @@
   .industry-exposure .summary,
   .industry-exposure .take-away {
     align-self: center;
-  }
-
-  .industry-exposure .poster {
-    width: 20vw;
   }
 
   .project-card
