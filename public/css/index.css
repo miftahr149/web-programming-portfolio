@@ -1,6 +1,6 @@
 :root {
   /* Color */
-  --primary-color: #4B70F5;
+  --primary-color: #3f63e4;
   --secondary-color: #637FE4;
   --primary-hover-color: #3DC2EC;
   --primary-text-color: #2D2525;
@@ -14,12 +14,12 @@
   --scaler-5: 2;
   
   /* Text Size */
-  --text-size-base: 1rem;
+  --text-size-base: 1.1rem;
   --text-size-1: calc(var(--text-size-base) * var(--scaler-1));
   --text-size-2: calc(var(--text-size-base) * var(--scaler-2));
   --text-size-3: var(--text-size-base);
-  --text-size-4: calc(var(--text-size-base) * var(--scaler-3));
-  --text-size-5: calc(var(--text-size-base) * var(--scaler-4));
+  --text-size-4: calc(var(--text-size-base) * var(--scaler-4));
+  --text-size-5: calc(var(--text-size-base) * var(--scaler-5));
 
   /* Padding Size */
   --padding-base: 5vw;
@@ -61,7 +61,7 @@ body {
 
 main {
   flex-grow: 1;
-  padding: 5px 20px;
+  padding: 5px 10vw;
 }
 
 /* # Utility Class */
@@ -148,6 +148,7 @@ main {
   display: flex;
   gap: 1rem;
   align-items: stretch;
+  font-size: var(--text-size-3);
 
   position: sticky;
   top: 0;
@@ -155,7 +156,6 @@ main {
 }
 
 .header__name {
-  font-size: var(--text-size-4);
   text-transform: uppercase;
   font-weight: bold;
 }
@@ -230,7 +230,6 @@ main {
 
 .page-link__text {
   font-weight: bold;
-  font-size: var(--text-size-4);
   text-transform: capitalize;
   text-align: center;
 }

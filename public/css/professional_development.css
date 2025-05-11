@@ -9,7 +9,12 @@
   display: grid;
   grid-auto-rows: min-content;
   gap: 1rem;
-  font-size: var(--text-size-5);
+  font-size: var(--text-size-4);
+}
+
+.industry-exposure .poster,
+.industry-exposure .photo {
+  border-radius: 10px;
 }
 
 .industry-exposure .poster {
@@ -34,8 +39,112 @@
 .industry-exposure 
 .take-away
 .take-away-list
- {
+{
   padding: 0 1rem;
+}
+
+/* # Project Card */
+.personal-project {
+  display: grid;
+  gap: 1rem;
+}
+
+.project-card {
+  border-radius: 10px;
+  background-color: var(--secondary-color);
+  padding: 1.5rem;
+  color: var(--secondary-text-color);
+  font-size: var(--text-size-4);
+  
+  display: grid;
+  gap: 1rem;
+}
+
+.project-card .h--2 {
+  color: inherit;
+}
+
+.project-card
+.tag-list {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.project-card 
+.tag-list
+.label {
+  font-weight: bold;
+  text-transform: capitalize; 
+}
+
+.project-card
+.tag-list
+.list {
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.project-card 
+.tag-list
+.tag-element {
+  --element-color: var(--secondary-text-color);
+
+  border-radius: 10px;
+  border: 2px solid var(--element-color);
+  color: var(--element-color);
+  padding: 4px 8px;
+  
+  font-size: var(--text-size-3);
+  text-transform: capitalize;
+
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.project-card
+.tag-list
+.tag-element:hover {
+  --element-color: var(--primary-text-color);
+  background-color: var(--secondary-text-color);
+  transition: all 200ms ease-in;
+}
+
+.project-card
+.tag-list
+.tag-element
+.img {
+  --img-size: var(--img-size-2);
+  border-radius: 50%;
+}
+
+.project-card
+.github-repo-button {
+  padding: 4px 10px;
+  background-color: var(--primary-text-color);
+  text-decoration: none;
+  color: var(--secondary-text-color);
+  font-size: var(--text-size-3);
+  
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  justify-self: start;
+}
+
+.project-card
+.github-repo-button
+.img {
+  --img-size: 2.3rem;
+}
+
+.project-card
+.github-repo-button:hover {
+  background-color: var(--secondary-text-color);
+  color: var(--primary-text-color);
+  transition: all 200ms ease-out;
 }
 
 @media screen and (min-width: 769px) {

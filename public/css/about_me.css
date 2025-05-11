@@ -4,7 +4,6 @@
   grid-template-rows: repeat(4, min-content);
   align-items: space-evenly;
   gap: 1rem;
-  padding: 1rem;
 }
 
 .about-me * {
@@ -17,7 +16,7 @@
 
 .description {
   align-self: center;
-  font-size: clamp(1.5rem, 3vw, 3rem);
+  font-size: var(--text-size-4);
   text-align: justify;
 }
 
