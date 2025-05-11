@@ -9,7 +9,7 @@
   display: grid;
   grid-auto-rows: min-content;
   gap: 1rem;
-  font-size: var(--text-size-4);
+  font-size: var(--text-size-3);
 }
 
 .industry-exposure .poster,
@@ -24,6 +24,7 @@
 
 .industry-exposure .photo {
   width: auto;
+  align-self: center;
 }
 
 .industry-exposure .summary {
@@ -36,11 +37,17 @@
   gap: 1rem;
 }
 
+.industry-exposure
+.take-away
+.take-away-list {
+  padding-left: 2rem;
+}
+
 .industry-exposure 
 .take-away
-.take-away-list
+.take-away-list::before
 {
-  padding: 0 1rem;
+  margin-right: 5px;
 }
 
 /* # Project Card */
@@ -54,7 +61,7 @@
   background-color: var(--secondary-color);
   padding: 1.5rem;
   color: var(--secondary-text-color);
-  font-size: var(--text-size-4);
+  font-size: var(--text-size-3);
   
   display: grid;
   gap: 1rem;
@@ -154,6 +161,7 @@
       "t t t"
       "ps s s"
       "ta ta ph";
+    font-size: var(--text-size-4);
   }
 
   .industry-exposure .h--2 {
@@ -183,5 +191,10 @@
 
   .industry-exposure .poster {
     width: 20vw;
+  }
+
+  .project-card
+  .project-description {
+    font-size: var(--img-size-2);
   }
 }
